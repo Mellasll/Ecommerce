@@ -1,3 +1,19 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url('/src/assest/background/copy-space-metallic-pastel-green-wall.jpg') no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +30,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

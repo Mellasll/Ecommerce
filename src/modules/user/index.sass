@@ -1,73 +1,116 @@
-$color1: #73766a    
-$color2: #181d24
-$color3: #2a333f
-$color4: #424769
-$button: #534145
-*
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif
-    margin: 0
-    padding: 0
-    box-sizing: border-box
-
-body
-    background:$color2
-    display: flex
-    justify-content: center
-    align-items: center
+$white: #fff
 
 .Logincontainer
+    display: flex
+    background: transparent
+    border: 2px solid rgba(255, 255, 255, .2)
+    backdrop-filter: blur(10px)
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2)
     margin: auto
     padding-bottom: 30px
-    margin-top: 100px
-    border-radius: 32px 
+    margin-top: 50px
+    border-radius: 10px
     width: 500px
     height: 500px
-    background: $color1
     overflow: hidden
-    border: 1px solid #ccc
-    
-    
-.login-btn-group
-    button
-        align-content: center
-        margin: 0.5rem
-        width: 330px
-        height: 48px
-        border-radius: 32px
-        background-color: $button
-
-.icon-wrapper
-    position: absolute
-    margin-top: 2rem
-    top: 10px
-    left: 50%
-    transform: translateX(-50%)
-    width: 150px
-    height: 150px
-    display: flex
+    align-content: center
     justify-content: center
-    align-items: center
-    background-color: $color3
-    border-radius: 50%
 
-.Form-wrapper
-    margin-top: 8rem
-
-.remember-forget
+.Registercontainer
     display: flex
-    justify-content: space-around
-    font-size: 14px
-    
-.input-box
-    input
-        margin: auto
-        margin-top: 1rem
-        align-items: center
+    background: transparent
+    border: 2px solid rgba(255, 255, 255, .2)
+    backdrop-filter: blur(10px)
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2)
+    margin: auto
+    padding-bottom: 30px
+    margin-top: 50px
+    border-radius: 10px
+    width: 500px
+    height: 570px
+    overflow: hidden
+    align-content: center
+    justify-content: center
+
+.Logincontainer, .Registercontainer
+    .login-custom
         display: flex
-        width: 330px
-        height: 48px
-        border-radius: 32px
-        text-align: center
+        justify-content: space-evenly
+        flex-direction: column
+        align-items: center
         font-size: 15px
-        margin-bottom: 1rem
-    
+        color: $white
+        margin-top: 1.5rem
+        margin-bottom: 2rem
+        .link-login
+            color: $white
+            font-size: 17px
+
+    .register-custom
+        display: flex
+        justify-content: space-evenly
+        flex-direction: column
+        align-items: center
+        font-size: 15px
+        color: $white
+        margin-top: 1.5rem
+        .link-register
+            color: $white
+            font-size: 17px
+
+    h1
+        color: $white
+        text-align: center
+        font-size: 50px
+        margin: 2rem
+        margin-bottom: 3rem
+
+    .login-btn-group
+        justify-content: center
+        margin: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-top: 1rem
+        button
+            margin: 0.5rem
+            width: 330px
+            height: 48px
+            border-radius: 32px
+            border-color: $white
+            font-size: 17px
+            color: rgb(69, 75, 74)
+
+    .remember-forgot
+        display: flex
+        justify-content: space-evenly
+        font-size: 15px
+        color: $white
+        margin-top: 1.5rem
+        a
+            color: $white
+
+    .input-box
+        input
+            margin: auto
+            margin-top: 1.5rem
+            align-items: center
+            display: flex
+            width: 330px
+            height: 48px
+            border-radius: 32px
+            text-align: left
+            font-size: 15px
+            padding: 20px 45px 20px 20px
+            background: transparent
+            color: $white
+            border: none
+            border: 2px solid rgba(255, 255, 255, .2)
+            &::placeholder
+                color: $white
+        .icon
+            position: absolute
+            right: 100px
+            transform: translateY(-205%)
+            font-size: 16px
+            color: $white

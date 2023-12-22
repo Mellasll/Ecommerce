@@ -1,14 +1,17 @@
 import './App.css';
 import './modules/user/index.sass'
-import Login from './modules/user/components/Login';
+import { Route, Routes } from 'react-router-dom';
+import UserRoutes from './modules/user/Routes';
 
 
 function App() {
   return (
-    <div className="App">
-      <Login/>
-    </div>
-  )
+    <>
+      <Routes>
+        <Route path="/*" element={<UserRoutes />} /> {/*login-register routerları alındı*/} 
+      </Routes>
+    </>
+  );
 }
 
 export default App;
