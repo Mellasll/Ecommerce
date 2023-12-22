@@ -15,6 +15,25 @@ $white: #fff
     overflow: hidden
     align-content: center
     justify-content: center
+    .register-custom
+        display: flex
+        justify-content: space-evenly
+        flex-direction: column
+        align-items: center
+        font-size: 15px
+        color: $white
+        margin-top: 1.5rem
+        .link-register
+            color: $white
+            font-size: 17px
+    .remember-forgot
+        display: flex
+        justify-content: space-evenly
+        font-size: 15px
+        color: $white
+        margin-top: 1.5rem
+        a
+            color: $white
 
 .Registercontainer
     display: flex
@@ -31,33 +50,32 @@ $white: #fff
     overflow: hidden
     align-content: center
     justify-content: center
+    
+    
 
-.Logincontainer, .Registercontainer
-    .login-custom
-        display: flex
-        justify-content: space-evenly
-        flex-direction: column
-        align-items: center
-        font-size: 15px
+.Forgotcontainer
+    display: flex
+    background: transparent
+    border: 2px solid rgba(255, 255, 255, .2)
+    backdrop-filter: blur(10px)
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2)
+    margin: auto
+    padding-bottom: 30px
+    margin-top: 50px
+    border-radius: 10px
+    width: 500px
+    height: 450px
+    overflow: hidden
+    align-content: center
+    justify-content: center
+    p
         color: $white
-        margin-top: 1.5rem
-        margin-bottom: 2rem
-        .link-login
-            color: $white
-            font-size: 17px
-
-    .register-custom
         display: flex
-        justify-content: space-evenly
-        flex-direction: column
-        align-items: center
-        font-size: 15px
-        color: $white
-        margin-top: 1.5rem
-        .link-register
-            color: $white
-            font-size: 17px
+        align-content: center
+        margin-left: 3rem
+        margin-right: 3rem
 
+.Logincontainer, .Registercontainer, .Forgotcontainer
     h1
         color: $white
         text-align: center
@@ -80,15 +98,6 @@ $white: #fff
             border-color: $white
             font-size: 17px
             color: rgb(69, 75, 74)
-
-    .remember-forgot
-        display: flex
-        justify-content: space-evenly
-        font-size: 15px
-        color: $white
-        margin-top: 1.5rem
-        a
-            color: $white
 
     .input-box
         input
@@ -114,3 +123,16 @@ $white: #fff
             transform: translateY(-205%)
             font-size: 16px
             color: $white
+    
+    .login-custom
+        display: flex
+        justify-content: space-evenly
+        flex-direction: column
+        align-items: center
+        font-size: 15px
+        color: $white
+        margin-top: 1.5rem
+        margin-bottom: 2rem
+        .link-login
+            color: $white
+            font-size: 17px

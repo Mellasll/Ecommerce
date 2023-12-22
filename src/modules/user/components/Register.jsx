@@ -30,7 +30,7 @@ const Register = () => {
                 
                 <div className='login-custom'>
                     <h4>Already have an account?</h4> 
-                    <NavLink className={(isActive)=> isActive && 'link-login'} to="/login">Login here</NavLink>
+                    <NavLink className={(isActive)=> isActive && 'link-login'} to="/login">Login</NavLink>
                 </div>
             </form>
         </div>

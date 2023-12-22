@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaUser,FaLock } from "react-icons/fa";
+import { FaLock, FaMailBulk } from "react-icons/fa";
 import '../index.sass'
 import { NavLink } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ const Login = () => {
 
                     <div className='input-box'>
                         <input type='text' placeholder='Email' required />
-                        <FaUser className='icon'/>
+                        <FaMailBulk className='icon'/>
                     
                         <input type="password" placeholder=" Password" required />
                         <FaLock className='icon'/>
@@ -21,7 +21,7 @@ const Login = () => {
 
                     <div className='remember-forgot'>
                         <label><input type='checkbox'/>Remember me</label>
-                        <a href=''>Forgot password?</a>
+                        <NavLink to='/forgot'>Forgot password?</NavLink>
                     </div>
 
                     <div className='login-btn-group'>
