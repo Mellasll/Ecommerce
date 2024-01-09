@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import axios from "axios";
 
 const AutoLogout = () => {
   //useNavigate hook'unu kullanarak navigasyon işlemleri için bir navigate fonksiyonu alıyoruz
@@ -9,28 +10,24 @@ const AutoLogout = () => {
   // Son işlem zamanını saklamak için bir state tanımlıyoruz, başlangıçta mevcut zamanı kullanıyoruz
   const [lastActionTime, setLastActionTime] = useState();
 
+  // Refresh tokenı yenileme ve yerine yazdırmak için 
   const refreshToken = async () => {
     try {
-      const refreshResponse = await fetch(
+      const refreshToken = localStorage.getItem("refresh_token");
+      const response = await axios.post(
         "https://api.escuelajs.co/api/v1/auth/refresh-token",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            refreshToken: localStorage.getItem("refresh_token"),
-          }),
-        }
+        { refreshToken }
       );
+
       document.addEventListener("click", () => {
         setLastActionTime(Date.now());
+        console.log('zaman',Date.now());
+
       });
-      if (refreshResponse.ok) {
-        const refreshedTokens = await refreshResponse.json();
+      if (response.status === 200 || response.status === 201) {
         // Yeni access_token ve refresh_token ile local storage'ı güncelle
-        localStorage.setItem("access_token", refreshedTokens.access_token);
-        localStorage.setItem("refresh_token", refreshedTokens.refresh_token);
+        localStorage.setItem("access_token", response.data.access_token);
+        localStorage.setItem("refresh_token", response.data.refresh_token);
       } else {
         console.error("Refresh token request failed");
       }
@@ -38,6 +35,7 @@ const AutoLogout = () => {
       console.error("Error while refreshing token:", error);
     }
   };
+
 
   const checkTokenValidity = () => {
       // Local storage'dan refresh token'ı alıyoruz
@@ -53,17 +51,15 @@ const AutoLogout = () => {
             // Token süresi dolmuşsa veya son işlem süresi 10 dakikadan fazla geçmişse çıkış yapıyoruz
             if (
               expiryTimestamp < currentTime ||
-              currentTime - lastActionTime > 60
+              currentTime - lastActionTime > 600
             ) {
               alert("Token expired or session timed out");
               localStorage.removeItem("access_token");
               localStorage.removeItem("refresh_token");
               navigate("/login"); // '/login' sayfasına yönlendirme yapılıyor
-            } else if (expiryTimestamp - currentTime < 60) {
+            } else if (expiryTimestamp - currentTime < 35400) {
               refreshToken();
               console.log("Token refreshed");
-            } else {
-              console.log("noluyo");
             }
           } else {
             console.error("Invalid token or expiry date not found");
@@ -77,17 +73,16 @@ const AutoLogout = () => {
   useEffect(() => {
     // İlk render olduğunda token geçerliliğini kontrol ediyoruz
     checkTokenValidity();
-
-/*     // Her 9 dakikada bir son işlem süresini güncellemek için bir interval oluşturuyoruz
+  // Her 9 dakikada bir son işlem süresini güncellemek için bir interval oluşturuyoruz
     const intervalId = setInterval(() => {
       setLastActionTime(Date.now());
-    }, 60000); // 540000 ms = 9 dakika
+    }, 54000); // 540000 ms = 9 dakika
     console.log("kontrol edildi");
 
     // Tıklamaları dinlemek için event listener ekle
-    // Komponent unmount olduğunda interval'i temizlsiyoruz
-    return () => clearInterval(intervalId); */
-  }, [lastActionTime, navigate]); // useEffect bağımlılıkları: navigate ve lastActionTime
+    // Komponent unmount olduğunda interval'i temizliyoruz
+    return () => clearInterval(intervalId); 
+  }, [lastActionTime]); // useEffect bağımlılıkları: navigate ve lastActionTime
 };
 
 export default AutoLogout;
