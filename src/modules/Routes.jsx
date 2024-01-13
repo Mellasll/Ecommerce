@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Forgot from "./components/Forgot";
-import AutoLogout from '../Authlogout'; // Import et
+import Login from "./user/components/Login";
+import Register from "./user/components/Register";
+import AutoLogout from "./Authlogout";
+import Forgot from "./user/components/Forgot";
 
 const UserRoutes = () => {
   return (
     <div>
-      <AutoLogout /> {/* AutoLogout'u burada çağır */}
+      <AutoLogout /> 
       <Routes> 
         <Route index={true} path="" element={<Login/>} />
         <Route key="loginPath" path="/login" element={<Login />} />
