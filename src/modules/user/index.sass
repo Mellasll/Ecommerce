@@ -1,5 +1,13 @@
 $white: #fff
 
+body 
+    background: url('../../assets/background/copy-space-metallic-pastel-green-wall.jpg') no-repeat
+    background-position: center
+    background-attachment: fixed
+    display: flex
+    justify-content: center
+    align-items: center
+
 .Logincontainer
     display: flex
     background: transparent
@@ -76,12 +84,15 @@ $white: #fff
         margin-right: 3rem
 
 .Logincontainer, .Registercontainer, .Forgotcontainer
+    h4 
+        color: $white
+        text-align: center
+        font-size: 16px
     h1
         color: $white
         text-align: center
         font-size: 50px
         margin: 2rem
-        margin-bottom: 3rem
 
     .login-btn-group
         justify-content: center
@@ -89,7 +100,6 @@ $white: #fff
         display: flex
         flex-direction: column
         align-items: center
-        margin-top: 1rem
         button
             margin: 0.5rem
             width: 330px

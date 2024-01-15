@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { FaLock, FaMailBulk } from 'react-icons/fa';
 import '../index.sass';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -32,6 +33,7 @@ const Login = () => {
                     localStorage.setItem('refresh_token', data.refresh_token);
                     // Handle successful login here, e.g., set user session, redirect, etc.
                     console.log('Login successful');
+                    navigate("../home")
                 } else {
                     console.error('Access token not found in response');
                 }

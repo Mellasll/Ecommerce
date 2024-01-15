@@ -5,9 +5,6 @@
     box-sizing: border-box;
 }
 body {
-    background: url('/src/assest/background/copy-space-metallic-pastel-green-wall.jpg') no-repeat;
-    background-position: center;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;

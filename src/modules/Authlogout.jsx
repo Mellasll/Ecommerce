@@ -45,7 +45,7 @@ const AutoLogout = () => {
           if (expiryTimestamp < currentTime || counter <= 0) {
             localStorage.removeItem("access_token");
             localStorage.removeItem("refresh_token");
-            navigate("/register");
+            navigate("/login");
             alert("Token expired or session timed out");
           } else if (expiryTimestamp - currentTime < 35997000) {
             refreshToken();

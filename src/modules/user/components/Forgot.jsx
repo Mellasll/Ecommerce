@@ -25,7 +25,7 @@ const Forgot = () => {
             </div>
 
             <div className="login-custom">
-            <h3>Back to</h3>
+            <h4>Back to</h4>
             <NavLink
                 className={(isActive) => isActive && "link-login"}to="/login">
                 Login here
