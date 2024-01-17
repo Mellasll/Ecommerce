@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaUser, FaLock, FaMailBulk } from "react-icons/fa";
 import '../index.sass';
 import { NavLink } from 'react-router-dom';
+import "../index.sass";
 
 const Register = () => {
     const [password, setPassword] = useState('');

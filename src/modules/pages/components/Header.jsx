@@ -2,6 +2,7 @@ import {Container, Nav, Navbar } from 'react-bootstrap';
 import { LiaShoppingBagSolid, LiaUser } from "react-icons/lia";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.sass'
+
 function Header() {
     return (
       <>
@@ -17,9 +18,9 @@ function Header() {
 
             <Navbar.Brand className='logo' href="./home">LOGO</Navbar.Brand>
             
-            <Nav className='userlink' >
-                <Nav.Link href="./login"  > <LiaUser /> </Nav.Link>
-                <Nav.Link href="#pricing" > <LiaShoppingBagSolid /> </Nav.Link>
+            <Nav className='userlink'  >
+                <Nav.Link href="./login"  > <LiaUser size={24}/> </Nav.Link>
+                <Nav.Link href="#pricing" > <LiaShoppingBagSolid size={24} /> </Nav.Link>
             </Nav>
 
           </Container>

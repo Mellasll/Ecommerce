@@ -14,11 +14,12 @@ const UserRoutes = () => {
       <Routes> 
       <Route index={true} path="/" element={<Home/>} />
         <Route key="home" path="/home" element={<Home/>} />
+        <Route key="product" path="/product" element={<Product />} />
+        <Route key="contact" path="/contact" element={<Contact />} /> 
         <Route key="loginPath" path="/login" element={<Login />} />
         <Route key="register" path="/register" element={<Register />} />
         <Route key="forgot" path="/forgot" element={<Forgot />} />
-        <Route key="product" path="/product" element={<Product />} />
-        <Route key="contact" path="/contact" element={<Contact />} />
+      
       </Routes>
     </div>
   );
