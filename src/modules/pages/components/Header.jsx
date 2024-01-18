@@ -6,11 +6,11 @@ import '../index.sass'
 function Header() {
     return (
       <>
-      <div className='header'>
+      <div className='Header'>
         <Navbar bg="light" data-bs-theme="light">
           <Container>
 
-            <Nav className="link">
+            <Nav>
               <Nav.Link href="./home">Home</Nav.Link>
               <Nav.Link href="./product">Product</Nav.Link>
               <Nav.Link href="./contact">Contact</Nav.Link>
