@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Product =()=>{
 return(
     <>
-    <Header></Header>
+    <Header/>
 
     <Row xs={1} md={2} className="g-4">
       {Array.from({ length: 4 }).map((_, idx) => (
