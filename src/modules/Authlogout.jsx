@@ -7,7 +7,7 @@ const AutoLogout = () => {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
   const [counter, setCounter] = useState(60);
-  console.log(counter)
+ // console.log(counter)
 
   const refreshToken = async () => {
     try {
