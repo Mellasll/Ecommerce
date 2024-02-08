@@ -5,6 +5,7 @@ const Main = () => {
     const [limit, setLimit] = useState()
     const [categories, setCategories] = useState()
     const [url, setUrl] = useState("https://fakestoreapi.com/products/")
+    console.log(url,'url')
 
     const Product = async () => {
         const res = await axios.get(url);

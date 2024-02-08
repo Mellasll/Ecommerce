@@ -42,7 +42,9 @@ const Footer = () => {
       </Row>
 
    </Container>
-
+    <footer>
+      <p>© 2024 by Logo </p>
+    </footer>
 </>
   );
 };
